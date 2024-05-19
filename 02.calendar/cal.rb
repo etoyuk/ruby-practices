@@ -24,7 +24,7 @@ last_day = Date.new(year,month, -1)
 
 # カレンダーのヘッダーを出力する（月の名前・曜日の名前）
 mon = Date.new(year,month)
-puts mon.strftime('%b').center(20)
+puts (mon.strftime('%b') + ' ' + year.to_s).center(20)
 
 puts "日 月 火 水 木 金 土"
 
