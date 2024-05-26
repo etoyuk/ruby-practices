@@ -19,21 +19,20 @@ end
 opt.parse!
 
 # 今月の最初の日と最後の日を求める
-first_day = Date.new(year,month, 1)
-last_day = Date.new(year,month, -1)
+first_date = Date.new(year,month, 1)
+last_date = Date.new(year,month, -1)
 
 # カレンダーのヘッダーを出力する（月の名前・曜日の名前）
-mon = Date.new(year,month)
-puts (mon.strftime('%b') + ' ' + year.to_s).center(20)
+puts (first_date.strftime('%b') + ' ' + year.to_s).center(20)
 
 puts "日 月 火 水 木 金 土"
 
 # 初週のスペースを出力（日曜始まりであればスペースを出力しない）
-day_of_week = first_day.wday.to_i
+day_of_week = first_date.wday.to_i
 print '   '*day_of_week
 
 # 各日付を出力する
-number_of_last_days = last_day.day
+number_of_last_days = last_date.day
 (1..number_of_last_days).each do |number_of_last_day|
   print number_of_last_day.to_s.rjust(2)+' '
   day_of_week+=1
